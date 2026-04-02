@@ -1,11 +1,14 @@
-# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
-name: Metrics
+name: Generate Snake
 on:
   # Schedule updates
   schedule: [{cron: "0 */12 * * *"}]
   push: {branches: "main"}
+
+permissions: 
+  contents: write
+  
 jobs:
-  github-metrics:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: Platane/snk@v3
